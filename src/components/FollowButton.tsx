@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { supabase } from "@/lib/superbaseClient";
+import { supabase } from "@/lib/supabaseClient";
 
 export default function FollowButton({ targetUserId }: { targetUserId: string }) {
   const [following, setFollowing] = useState(false);

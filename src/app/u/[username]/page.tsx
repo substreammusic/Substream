@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import { supabase } from "@/lib/superbaseClient";
+import { supabase } from "@/lib/supabaseClient";
 import  FollowButton  from "@/components/FollowButton";
 import  UploadForm  from "@/components/UploadForm";
 

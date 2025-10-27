@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { supabase } from "@/lib/superbaseClient";
+import { supabase } from "@/lib/supabaseClient";
 
 type Profile = { username: string | null; display_name: string | null };
 

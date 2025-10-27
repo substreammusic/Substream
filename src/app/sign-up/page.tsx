@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import AuthCard from "@/components/AuthCard";
-import { supabase } from "@/lib/superbaseClient";
+import { supabase } from "@/lib/supabaseClient";
 
 export default function SignUpPage() {
   const router = useRouter();
