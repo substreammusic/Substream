@@ -1,4 +1,9 @@
 "use client";
+"use client";
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 import { useMemo, useState } from "react";
 import TrackCard from "@/components/TrackCard";
 import PlayerBar, { Track } from "@/components/PlayerBar";
