@@ -12,7 +12,7 @@ export default function UserProfilePage() {
   const params = useParams();
   const username = params.username as string;
   const [profile, setProfile] = useState<Profile | null>(null);
-  const [tracks, setTracks] = useState<Track[]>([]);
+  const [tracks, settracks] = useState<Track[]>([]);
   const [isOwner, setIsOwner] = useState(false);
 
   useEffect(() => {
@@ -25,12 +25,12 @@ export default function UserProfilePage() {
       const { data: session } = await supabase.auth.getSession();
       setIsOwner(session.session?.user?.id === prof.id);
 
-      const { data: userTracks } = await supabase
+      const { data: usertracks } = await supabase
         .from("tracks")
         .select("*")
         .eq("user_id", prof.id)
         .order("id", { ascending: false });
-      setTracks(userTracks || []);
+      settracks(usertracks || []);
     })();
   }, [username]);
 
@@ -52,7 +52,7 @@ export default function UserProfilePage() {
 
       {/* tabs */}
       <div style={{ display:"flex", gap:12, marginBottom:12 }}>
-        <a href={`#tracks`} style={{ color:"#00FFE0", textDecoration:"none", fontWeight:700 }}>Tracks</a>
+        <a href={`#tracks`} style={{ color:"#00FFE0", textDecoration:"none", fontWeight:700 }}>tracks</a>
         <a href={`#about`} style={{ color:"#00FFE0", textDecoration:"none", fontWeight:700 }}>About</a>
         {isOwner && <a href="/profile/edit" style={{ color:"#00FFE0", textDecoration:"none", fontWeight:700 }}>Edit</a>}
       </div>
